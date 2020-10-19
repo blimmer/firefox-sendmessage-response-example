@@ -1,12 +1,17 @@
-class MyClass {
-  get foo() {
-    return 'foo';
-  }
-}
+Vue.use(Vuex);
 
+const store = new Vuex.Store({
+  state: {
+    myObj: {
+      foo: 'bar'
+    },
+  },
+})
 
 function handleInternal() {
-  return Promise.resolve(new MyClass());
+  const myObj = store.state.myObj;
+  console.dir(myObj)
+  return Promise.resolve(myObj);
 }
 
 async function setup() {

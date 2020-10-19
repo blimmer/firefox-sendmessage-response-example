@@ -5,6 +5,8 @@
   "background": {
     "scripts": [
       "webext-polyfill.js",
+      "vue.js",
+      "vuex.js",
       "bg.js"
     ]
   },
