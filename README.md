@@ -9,7 +9,7 @@ In this sample code, I'm using [Vuex](https://vuex.vuejs.org/) in my Background 
 basic Javascript objects with reactive getters and setters, which exposes the problem. So, when a plain ol' Javascript
 object is defined in the Vuex Store's `state`, it is automatically transformed.
 
-In this example (see [`bg.js`](blob/main/bg.js)), `myObj` in the `state` is defined like this:
+In this example (see [`bg.js`](bg.js)), `myObj` in the `state` is defined like this:
 
 ```js
 const store = new Vuex.Store({
@@ -29,7 +29,7 @@ wrapped with `reactiveGetter` and `reactiveSetter`.
 ## The Issue
 
 The difference between Firefox and Google Chrome is exposed when a Vuex object is pulled from `state` and sent as a
-response to a `sendMessage` call from a Content Script (see [`bg.js`](blob/main/bg.js) and [`cs.js`](blob/main/cs.js)).
+response to a `sendMessage` call from a Content Script (see [`bg.js`](bg.js) and [`cs.js`](cs.js)).
 
 ### Firefox
 
