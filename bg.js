@@ -6,17 +6,17 @@ const store = new Vuex.Store({
       foo: 'bar'
     },
   },
-})
+});
 
 function handleInternal() {
-  const myObj = store.state.myObj;
-  console.dir(myObj)
-  return Promise.resolve(myObj);
+  // The `foo` property is visible in the Content Script on Google Chrome, but not on Firefox.
+  // I can work around this problem by coping the object using `Object.assign`, like this:
+  // return Promise.resolve(Object.assign({}, store.state.myObj));
+  return Promise.resolve(store.state.myObj);
 }
 
 async function setup() {
   browser.runtime.onMessage.addListener(handleInternal);
 }
-
 
 setup();
