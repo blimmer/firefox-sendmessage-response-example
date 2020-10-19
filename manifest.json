@@ -4,9 +4,16 @@
   "version": "1.0.0",
   "background": {
     "scripts": [
+      "webext-polyfill.js",
       "bg.js"
     ]
   },
+  "content_scripts": [
+    {
+      "matches": ["*://developer.mozilla.org/*"],
+      "js": ["cs.js"]
+    }
+  ],
   "permissions": [
     "*://developer.mozilla.org/*"
   ]
